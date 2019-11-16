@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="195e4d33-36a4-491f-9158-4062418abe0b" name="Default Changelist" comment="pure version">
-      <change afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+    <list default="true" id="195e4d33-36a4-491f-9158-4062418abe0b" name="Default Changelist" comment="finish layout">
+      <change afterPath="$PROJECT_DIR$/src/action/globalAction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/asset/font/FiraCode-Retina.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Layout.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/locale/en_US.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/locale/zh_CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducer/globalReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducer/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/saga/globalSaga.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/saga/saga.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/state/globalState.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/generateElementUtils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.base.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.base.conf.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,6 +33,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -42,7 +58,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/asset/font" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -51,9 +67,14 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+    <property name="ts.external.directory.path" value="D:\applications\jetbrainsTools\apps\WebStorm\ch-0\192.7142.35\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\WebStormWorkspace\resource-admin\src" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WebStormWorkspace\resource-admin\src\asset\font" />
       <recent name="E:\WebStormWorkspace\resource-admin" />
     </key>
   </component>
@@ -94,7 +115,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573806733850</updated>
-      <workItem from="1573806735890" duration="5573000" />
+      <workItem from="1573806735890" duration="44768000" />
     </task>
     <task id="LOCAL-00001" summary="first version,create project">
       <created>1573810889304</created>
@@ -103,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573810889304</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="pure version">
+      <created>1573812798898</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1573812798898</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,6 +181,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first version,create project" />
     <MESSAGE value="pure version" />
-    <option name="LAST_COMMIT_MESSAGE" value="pure version" />
+    <MESSAGE value="finish layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish layout" />
   </component>
 </project>
