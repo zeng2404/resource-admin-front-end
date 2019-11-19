@@ -1,27 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="195e4d33-36a4-491f-9158-4062418abe0b" name="Default Changelist" comment="finish layout">
-      <change afterPath="$PROJECT_DIR$/src/action/globalAction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/asset/font/FiraCode-Retina.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/Layout.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/locale/en_US.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/locale/zh_CN.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducer/globalReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducer/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/saga/globalSaga.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/saga/saga.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/state/globalState.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/generateElementUtils.js" afterDir="false" />
+    <list default="true" id="195e4d33-36a4-491f-9158-4062418abe0b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/action/bookmarkAction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/action/tagAction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Snackbar/MySnackbarContent.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/TextField/ValidationTextField.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/container/bookmark/Bookmark.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/container/tag/Tag.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducer/bookmarkReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducer/tagReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/route.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/saga/bookmarkSaga.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/saga/tagSaga.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/state/bookmarkState.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/state/tagState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.base.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.base.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/action/globalAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/globalAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Layout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locale/en_US.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/locale/en_US.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locale/zh_CN.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/locale/zh_CN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/globalReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/globalReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/saga/saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/saga/saga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/globalState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/globalState.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,24 +66,28 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/asset/font" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/container/tag" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="D:\applications\jetbrainsTools\apps\WebStorm\ch-0\192.7142.35\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\WebStormWorkspace\resource-admin\src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WebStormWorkspace\resource-admin\src\container\tag" />
       <recent name="E:\WebStormWorkspace\resource-admin\src\asset\font" />
       <recent name="E:\WebStormWorkspace\resource-admin" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\WebStormWorkspace\resource-admin\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -115,7 +127,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573806733850</updated>
-      <workItem from="1573806735890" duration="44768000" />
+      <workItem from="1573806735890" duration="54261000" />
+      <workItem from="1574086071026" duration="1438000" />
+      <workItem from="1574087549151" duration="14662000" />
     </task>
     <task id="LOCAL-00001" summary="first version,create project">
       <created>1573810889304</created>
@@ -131,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573812798898</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="finish layout">
+      <created>1573923418929</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1573923418929</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,7 +188,9 @@
         </entry>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

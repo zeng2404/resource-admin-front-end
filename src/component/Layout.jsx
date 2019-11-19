@@ -18,8 +18,9 @@ import {
     ListItem,
     ListItemIcon
 } from "@material-ui/core";
+import { HashRouter ,Link } from 'react-router-dom'
 
-import {Translate, Menu, ChevronLeft, Bookmark} from "@material-ui/icons";
+import {Translate, Menu, ChevronLeft, Bookmark, Label} from "@material-ui/icons";
 import {withStyles} from '@material-ui/core/styles';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
@@ -98,6 +99,14 @@ const styles = theme => ({
         padding: theme.spacing(0, 1),
         height: 64,
     },
+    listItem : {
+        textDecoration : 'none',
+    },
+    listItemText: {
+        color: 'rgba(0, 0, 0, 0.87)',
+        fontWeight: 'bold',
+
+    }
 })
 
 // state
@@ -232,18 +241,32 @@ class Layout extends Component {
                         </IconButton>
                     </div>
                     <Divider/>
+                    <HashRouter>
                     <List>
-                        <ListItem button key={'left-drawer-bookmark'}>
+                        <Link to={'/bookmark'} className={classes.listItem}>
+                        <ListItem button key={'left-drawer-bookmark'} >
                             <ListItemIcon>
                                 <Bookmark/>
                             </ListItemIcon>
-                            <ListItemText>
+                            <ListItemText className={classes.listItemText}>
                                 <FormattedMessage id={"intl_left_drawer_bookmark"}>
                                 </FormattedMessage>
                             </ListItemText>
                         </ListItem>
-
+                        </Link>
+                        <Link to={'/tag'} className={classes.listItem}>
+                            <ListItem button key={'left-drawer-tag'} >
+                                <ListItemIcon>
+                                    <Label/>
+                                </ListItemIcon>
+                                <ListItemText className={classes.listItemText}>
+                                    <FormattedMessage id={"intl_left_drawer_tag"}>
+                                    </FormattedMessage>
+                                </ListItemText>
+                            </ListItem>
+                        </Link>
                     </List>
+                    </HashRouter>
                 </Drawer>
             </div>
         )

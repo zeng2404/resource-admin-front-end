@@ -24,9 +24,17 @@ const changeLeftDrawerOpenStatus = openBool => {
         openBool
     }
 }
+
+const changeSnackbarVisibilityStatus = openBool => {
+    return {
+        type: 'CHANGE_SNACKBAR_VISIBILITY_STATUS',
+        openBool,
+    }
+}
 export {
     openLocaleChooseMenu,
     closeLocaleChooseMenu,
     changeLocaleChooseIndex,
     changeLeftDrawerOpenStatus,
+    changeSnackbarVisibilityStatus,
 }

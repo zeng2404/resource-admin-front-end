@@ -5,6 +5,9 @@ const globalState = {
     localeChooseMenuVisibility: false,
     localeChooseMenuAnchorEl: null,
     leftDrawerOpenBool: false,
+    snackbarVisibility: false,
+    snackbarInfoLevel: 'success',
+    snackbarMessageIntlId: 'intl_snackbar_default_message',
 }
 
 export default globalState;

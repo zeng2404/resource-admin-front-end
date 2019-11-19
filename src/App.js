@@ -1,19 +1,26 @@
 import React, {Component} from 'react';
 import {
     Paper,
-
+    Snackbar,
 } from "@material-ui/core";
+import { green } from '@material-ui/core/colors';
 import {withStyles} from "@material-ui/core/styles";
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types';
+import {snackbarAutoHiddenTime} from "./config/config";
+import  MySnackbarContent  from "./component/Snackbar/MySnackbarContent.jsx";
 
 // react 国际化
-import {IntlProvider} from 'react-intl'
+import {FormattedMessage, IntlProvider} from 'react-intl'
 import zh_CN from "./locale/zh_CN";
 import en_US from "./locale/en_US";
 
+import routes from "./route";
+import {Redirect, Route, Switch, HashRouter} from 'react-router-dom';
+
 // function
 import {
+    changeSnackbarVisibilityStatus,
 } from './action/globalAction'
 import Layout from "./component/Layout.jsx";
 
@@ -39,8 +46,25 @@ const styles = theme => ({
         }),
     },
     content: {
-        padding: 16,
-    }
+        padding: 20,
+    },
+    success: {
+        backgroundColor: green[600],
+    },
+    error: {
+        backgroundColor: theme.palette.error.dark,
+    },
+    icon: {
+        fontSize: 20,
+    },
+    iconVariant: {
+        opacity: 0.9,
+        marginRight: theme.spacing(1),
+    },
+    message: {
+        display: 'flex',
+        alignItems: 'center',
+    },
 })
 
 // state
@@ -49,12 +73,17 @@ const mapStateToProps = state => {
         currentLocaleChooseIndex: state.globalReducer.currentLocaleChooseIndex,
         localeList: state.globalReducer.localeList,
         leftDrawerOpenBool: state.globalReducer.leftDrawerOpenBool,
+        snackbarVisibility: state.globalReducer.snackbarVisibility,
+        snackbarInfoLevel: state.globalReducer.snackbarInfoLevel,
+        snackbarMessageIntlId: state.globalReducer.snackbarMessageIntlId,
     }
 }
 
 // function
 const mapDispatchToProps = dispatch => {
     return {
+        changeSnackbarVisibilityStatus: openBool => dispatch(changeSnackbarVisibilityStatus(openBool)),
+
     }
 }
 
@@ -86,10 +115,14 @@ class App extends Component {
             currentLocaleChooseIndex,
             localeList,
             leftDrawerOpenBool,
+            snackbarVisibility,
+            snackbarInfoLevel,
+            snackbarMessageIntlId,
         } = this.props;
 
         // function
         const {
+            changeSnackbarVisibilityStatus,
         } = this.props;
 
         return (
@@ -98,7 +131,34 @@ class App extends Component {
                     <Layout/>
                     <div className={classes.contentBox} style={{marginLeft: leftDrawerOpenBool ? 210 : 58}}>
                         <Paper className={classes.content}>
-
+                            <Snackbar
+                                anchorOrigin={{vertical: 'top', horizontal: 'right'}}
+                                autoHideDuration={snackbarAutoHiddenTime}
+                                open={snackbarVisibility}
+                                onClose={() => changeSnackbarVisibilityStatus(false)}
+                                ContentProps={{
+                                    'aria-describedby': 'message-id',
+                                }}
+                            >
+                                <MySnackbarContent
+                                    infoLevel={snackbarInfoLevel}
+                                    message={
+                                        <FormattedMessage id={snackbarMessageIntlId}>
+                                        </FormattedMessage>
+                                    }
+                                    onClose={() => changeSnackbarVisibilityStatus(false)}
+                                />
+                            </Snackbar>
+                            <HashRouter>
+                                <Switch>
+                                    {
+                                        routes.map((route, index) => (
+                                            <Route exact path={route.path} component={route.component} key={route.key}/>
+                                        ))
+                                    }
+                                    <Redirect from="/" to="/bookmark"/>
+                                </Switch>
+                            </HashRouter>
                         </Paper>
                     </div>
                 </IntlProvider>

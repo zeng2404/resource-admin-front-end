@@ -24,6 +24,11 @@ const globalReducer =(state = globalState, action) => {
                 leftDrawerOpenBool: action.openBool,
             })
             break;
+        case 'CHANGE_SNACKBAR_VISIBILITY_STATUS':
+            return Object.assign({}, state, {
+                snackbarVisibility: action.openBool,
+            });
+            break;
         default:
             return state;
     }
