@@ -46,7 +46,11 @@ const styles = theme => ({})
 
 //state
 const mapStateToProps = state => {
-    return {}
+    return {
+        test: state.bookmarkReducer.test,
+        test2: state.bookmarkReducer.test2,
+        test3: state.tagReducer.tagSaveDialogErrorArray,
+    }
 }
 
 // function
@@ -56,6 +60,12 @@ const mapDispatchToProps = dispatch => {
 
 class Bookmark extends Component {
     render() {
+        const {
+            classes,
+            test,
+            test2,
+            test3,
+        } = this.props;
         return (
             <div>
                 <Typography variant={'h5'}>
@@ -69,10 +79,10 @@ class Bookmark extends Component {
                     alignItems="center"
                 >
                     <Grid item>
-                        <h1>First</h1>
+                        <h1>{test}</h1>
                     </Grid>
                     <Grid item>
-                        <h1>Second</h1>
+                        <h1>{test2}</h1>
                     </Grid>
                     <Grid item>
                         <h1>Third</h1>

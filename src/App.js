@@ -9,6 +9,7 @@ import {connect} from 'react-redux'
 import PropTypes from 'prop-types';
 import {snackbarAutoHiddenTime} from "./config/config";
 import  MySnackbarContent  from "./component/Snackbar/MySnackbarContent.jsx";
+import axios from 'axios'
 
 // react 国际化
 import {FormattedMessage, IntlProvider} from 'react-intl'
@@ -21,6 +22,7 @@ import {Redirect, Route, Switch, HashRouter} from 'react-router-dom';
 // function
 import {
     changeSnackbarVisibilityStatus,
+    initialBaseUrl,
 } from './action/globalAction'
 import Layout from "./component/Layout.jsx";
 
@@ -83,15 +85,16 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         changeSnackbarVisibilityStatus: openBool => dispatch(changeSnackbarVisibilityStatus(openBool)),
+        initialBaseUrl: () => dispatch(initialBaseUrl()),
 
     }
 }
 
 class App extends Component {
 
-
     componentDidMount() {
-
+        console.log("begin initial base url");
+        this.props.initialBaseUrl();
     }
 
     render() {

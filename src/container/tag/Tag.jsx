@@ -36,21 +36,20 @@ import {
     TableSelection,
     TableColumnResizing,
 } from '@devexpress/dx-react-grid-material-ui';
+import {withStyles} from '@material-ui/core/styles';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+import {FormattedMessage} from "react-intl";
 
 import {blue} from "@material-ui/core/colors";
 
 import {
     Add,
 } from '@material-ui/icons';
-import {withStyles} from '@material-ui/core/styles';
-import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
-import {FormattedMessage} from "react-intl";
-
-import ValidationTextField from "../../component/TextField/ValidationTextField.jsx";
-import StateButton from "../hooks/button";
-import Context from '../hooks/context'
-
+import {
+    changeTagSaveDialogVisibility,
+    submitTagSaveForm,
+} from '../../action/tagAction'
 // css
 const styles = theme => ({
     addButton: {
@@ -73,86 +72,104 @@ const styles = theme => ({
 
 //state
 const mapStateToProps = state => {
-    return {}
+    return {
+        tagSaveDialogVisibility: state.tagReducer.tagSaveDialogVisibility,
+        tagSaveDialogErrorArray: state.tagReducer.tagSaveDialogErrorArray,
+    }
 }
 
 // function
 const mapDispatchToProps = dispatch => {
-    return {}
+    return {
+        changeTagSaveDialogVisibility: visibilityBool => dispatch(changeTagSaveDialogVisibility(visibilityBool)),
+        submitTagSaveForm: tagObjcet => dispatch(submitTagSaveForm(tagObjcet)),
+    }
 }
-
-
 
 class Tag extends Component {
     render() {
-
         const {
             classes,
+            tagSaveDialogVisibility,
+            tagSaveDialogErrorArray,
         } = this.props;
 
+        const {
+            changeTagSaveDialogVisibility,
+            submitTagSaveForm,
+        } = this.props;
         return (
             <div>
-                <Dialog open={false}>
-                    <DialogTitle>
-                        <FormattedMessage id={"intl_tag_add_dialog_title"}>
-                        </FormattedMessage>
-                    </DialogTitle>
-                            <form onSubmit={
-                                event =>{
-                                    event.preventDefault();
-                                }
-                            }>
-                                <DialogContent>
-                                <ValidationTextField
-                                    id={"tagName"}
-                                    label={
-                                        <FormattedMessage id={"intl_tag_name_label"}>
-                                        </FormattedMessage>
-                                    }
-                                    fullWidth
-                                    required
-                                    name={"tagName"}
-                                    className={classes.textField}
-                                    margin={"normal"}
-                                    variant={"outlined"}
-                                    error
-                                    helperText={"helper text"}
-                                    />
-                                <ValidationTextField
-                                    id={"tagDescription"}
-                                    label={
-                                        <FormattedMessage id={"intl_tag_description_label"}>
-                                        </FormattedMessage>
-                                    }
-                                    fullWidth
-                                    helperText={"helper text"}
-                                    name={"tagDescription"}
-                                    className={classes.textField}
-                                    margin={"normal"}
-                                    variant={"outlined"}
-                                />
-                                </DialogContent>
-                                <DialogActions className={classes.dialogAction}>
-                                    <Button type={'reset'} color="default" variant="contained">
-                                        <FormattedMessage id={"intl_reset_button_value"}>
-                                        </FormattedMessage>
-                                    </Button>
-                                    <Button onClick={() =>{}} color="secondary"
-                                            variant="contained">
-                                        <FormattedMessage id={"intl_cancel_button_value"}>
-                                        </FormattedMessage>
-                                    </Button>
-                                    <Button type={'submit'} color="primary" variant="contained">
-                                        <FormattedMessage id={"intl_submit_button_value"}>
-                                        </FormattedMessage>
-                                    </Button>
-                                </DialogActions>
-                            </form>
-                </Dialog>
                 <Typography variant={'h5'}>
                     <FormattedMessage id={"intl_tag_container_title"}>
                     </FormattedMessage>
                 </Typography>
+                <Dialog open={tagSaveDialogVisibility}>
+                    <DialogTitle>
+                        <FormattedMessage id={"intl_tag_add_dialog_title"}>
+                        </FormattedMessage>
+                    </DialogTitle>
+                    <form onSubmit={
+                        event => {
+                            event.preventDefault();
+                            submitTagSaveForm({
+                                tagName: event.target.tagName.value,
+                                tagDescription: event.target.tagDescription.value,
+                            })
+                        }
+                    }>
+                        <DialogContent>
+                            <TextField
+                                id={"tagName"}
+                                label={
+                                    <FormattedMessage id={"intl_tag_name_label"}>
+                                    </FormattedMessage>
+                                }
+                                error={tagSaveDialogErrorArray.indexOf("tagName") !== -1}
+                                helperText={
+                                    tagSaveDialogErrorArray.indexOf("tagName") !== -1 ?
+                                        <FormattedMessage id={"intl_tag_name_validate_error_tip"}>
+                                        </FormattedMessage>
+                                        : ""
+                                }
+                                fullWidth
+                                name={"tagName"}
+                                className={classes.textField}
+                                margin={"normal"}
+                                variant={"outlined"}
+                            />
+                            <TextField
+                                id={"tagDescription"}
+                                label={
+                                    <FormattedMessage id={"intl_tag_description_label"}>
+                                    </FormattedMessage>
+                                }
+                                fullWidth
+                                name={"tagDescription"}
+                                className={classes.textField}
+                                margin={"normal"}
+                                variant={"outlined"}
+                            />
+                        </DialogContent>
+                        <DialogActions className={classes.dialogAction}>
+                            <Button type={'reset'} color="default" variant="contained">
+                                <FormattedMessage id={"intl_reset_button_value"}>
+                                </FormattedMessage>
+                            </Button>
+                            <Button onClick={() => {
+                                changeTagSaveDialogVisibility(false);
+                            }} color="secondary"
+                                    variant="contained">
+                                <FormattedMessage id={"intl_cancel_button_value"}>
+                                </FormattedMessage>
+                            </Button>
+                            <Button type={'submit'} color="primary" variant="contained">
+                                <FormattedMessage id={"intl_submit_button_value"}>
+                                </FormattedMessage>
+                            </Button>
+                        </DialogActions>
+                    </form>
+                </Dialog>
                 <Grid
                     container
                     direction="row"
@@ -160,11 +177,8 @@ class Tag extends Component {
                     alignItems="center"
                 >
                     <Grid item>
-                        <h1>First</h1>
                     </Grid>
                     <Grid item>
-                        {/*<StateButton/>*/}
-                        <Context/>
                     </Grid>
                     <Grid item>
                         <Tooltip title=
@@ -175,7 +189,7 @@ class Tag extends Component {
                         >
                             <Fab size="small" aria-label="Add" className={classes.addButton}>
                                 <Add onClick={() => {
-                                    alert('test')
+                                    changeTagSaveDialogVisibility(true);
                                 }}/>
                             </Fab>
                         </Tooltip>

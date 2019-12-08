@@ -1,4 +1,5 @@
-import bookmarkState from "../state/bookmarkState";
+const bookmarkState = {
+}
 
 const bookmarkReducer = (state = bookmarkState, action) => {
     switch (action.type) {

@@ -1,3 +1,8 @@
+const initialBaseUrl = () => {
+    return {
+        type: 'INITIAL_BASE_URL',
+    }
+}
 const openLocaleChooseMenu = anchorEl => {
     return {
         type: 'OPEN_LOCALE_CHOOSE_MENU',
@@ -37,4 +42,5 @@ export {
     changeLocaleChooseIndex,
     changeLeftDrawerOpenStatus,
     changeSnackbarVisibilityStatus,
+    initialBaseUrl,
 }
